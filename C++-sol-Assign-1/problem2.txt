@@ -1,0 +1,32 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int secondMax(vector<int> &footwear_sizes)
+{
+    int max=0,sec_max=0;
+    int n=footwear_sizes.size();
+    for(int i=0;i<n;i++){
+        if(max<footwear_sizes[i]){
+            sec_max=max;
+            max=footwear_sizes[i];
+        }
+        else if(sec_max<footwear_sizes[i] && max!=footwear_sizes[i]){
+            sec_max=footwear_sizes[i];
+        }
+    }
+    return sec_max;
+}
+int main()
+{
+	int n;
+	cout<<"enter no of footwear sizes"<<endl;
+	cin>>n;
+	vector<int> footwear_sizes(n);
+	cout<<"enter footwear sizes"<<endl;
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&footwear_sizes[i]);
+	}
+	cout<<"Ram selects footwear of size "<<secondMax(footwear_sizes)<<endl;
+}
+

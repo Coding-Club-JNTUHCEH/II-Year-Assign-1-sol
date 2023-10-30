@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+int binarySearch(int [],int,int);
+
+int main()
+{
+	int n;
+	int i,key;
+	int ticket_numbers[1000];
+	printf("enter value of n: ");
+	scanf("%d",&n);
+	printf("enter ticket numbers\n");
+	for(i=0;i<n;i++)
+	scanf("%d",&ticket_numbers[i]);
+	printf("enter winning ticket number : ");
+	scanf("%d",&key);
+	if(binarySearch(ticket_numbers,n,key)!=-1){
+	    printf("Won");
+	}
+	else{
+	    printf("Lost");
+	}
+}
+
+int binarySearch(int ticket[],int n,int key)
+{
+    int high = n - 1, low = 0;
+    while (high >= low) {
+        int mid = (high + low) / 2;
+        if (ticket[mid] == key) {
+            return mid;
+        } else if (ticket[mid] > key) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return -1;
+
+}

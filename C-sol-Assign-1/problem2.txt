@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+int secondMax(int [],int);
+int main()
+{
+	int n,req,items,count,i;
+	int footwear_sizes[1000];
+	printf("enter no of footwear sizes\n");
+	scanf("%d",&n);
+	printf("enter footwear sizes\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&footwear_sizes[i]);
+	}
+	printf("Ram selects footwear of size %d ",secondMax(footwear_sizes,n));
+}
+int secondMax(int footwear_sizes[],int n)
+{
+    int max=0,sec_max=0;
+    int i;
+    for(i=0;i<n;i++){
+        if(max<footwear_sizes[i]){
+            sec_max=max;
+            max=footwear_sizes[i];
+        }
+        else if(sec_max<footwear_sizes[i] && max!=footwear_sizes[i]){
+            sec_max=footwear_sizes[i];
+        }
+    }
+    return sec_max;
+
+}

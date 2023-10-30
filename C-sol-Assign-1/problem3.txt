@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<conio.h>
+void pattern(int);
+
+int main()
+{
+	int n;
+	printf("enter value of n: ");
+	scanf("%d",&n);
+	pattern(n);
+}
+
+void pattern(int n)
+{
+    int x=n-1;
+    int i,j;
+    for(i=1;i<=n;i++){
+        for(j=1;j<=x;j++){
+            printf(" ");
+        }
+        for(j=1;j<=(i*2-1);j++){
+            printf("*");
+        }
+        x--;
+        printf("\n");
+    }
+    x=0;
+    for(i=n;i>=0;i--){
+        for(j=1;j<=x;j++){
+           printf(" ");
+        }
+        for(j=1;j<=(i*2-1);j++){
+            printf("*");
+        }
+        x++;
+        printf("\n");
+    }
+}

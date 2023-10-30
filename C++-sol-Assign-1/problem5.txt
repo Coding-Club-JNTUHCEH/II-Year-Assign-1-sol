@@ -1,0 +1,31 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool IsArrSorted(vector<int> &arr)
+{
+    int n=arr.size();
+    for(int i=0;i<n-1;i++){
+        if(arr[i]>arr[i+1]){
+            return false;
+        }
+    }
+    return true;
+}
+int main()
+{
+	int n;
+	cout<<"enter no of Students: ";
+	cin>>n;
+	vector<int> arr(n);
+	cout<<"enter Heights of the Students:"<<endl;
+	for(int i=0;i<n;i++)
+	{
+	    cin>>arr[i];
+	}
+	if(IsArrSorted(arr)){
+	    cout<<"Yes"<<endl;
+	}
+	else{
+	    cout<<"No"<<endl;
+	}
+}

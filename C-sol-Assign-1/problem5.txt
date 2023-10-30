@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+bool IsArrSorted(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int n;
+    printf("enter no of Students: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("enter Heights of the Students:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    if (IsArrSorted(arr, n)) {
+        printf("Yes\n");
+    } else {
+        printf("No\n");
+    }
+
+    return 0;
+}

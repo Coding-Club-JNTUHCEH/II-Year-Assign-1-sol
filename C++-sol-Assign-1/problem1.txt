@@ -7,7 +7,6 @@ int main()
 	cout<<"Enter no of food items"<<endl;
 	cin>>n;
 	int req=(n/2);
-	req+=(n%2);
 	int items;
 	int count=0;
 	cout<<"enter delivered times of n food items"<<endl;

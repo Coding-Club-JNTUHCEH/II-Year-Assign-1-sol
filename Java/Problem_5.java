@@ -24,7 +24,7 @@ public class Problem_5 {
 
     public static boolean checkHeightOrder(List<Integer> heights) {
         for (int i = 1; i < heights.size(); i++) {
-            if (heights.get(i) <= heights.get(i - 1)) {
+            if (heights.get(i) < heights.get(i - 1)) {
                 return false;
             }
         }

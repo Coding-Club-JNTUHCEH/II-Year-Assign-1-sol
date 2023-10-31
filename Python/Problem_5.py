@@ -1,6 +1,6 @@
 def check_height_order(heights):
     for i in range(1, len(heights)):
-        if heights[i] <= heights[i - 1]:
+        if heights[i] < heights[i - 1]:
             return False
     return True
 
